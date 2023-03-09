@@ -1,6 +1,6 @@
 # Define the Terraform module
 module "my_lambda_function" {
-  source = "git::https://github.com/victorhadyak/viktorhadiak-ramp-up/blob/main/API%20Integration%20task/Terraform/main.tf"
+  source = "git::https://github.com/victorhadyak/viktorhadiak-ramp-up/blob/main/API%20Integration%20task/Terraform"
   
   # Function configuration
   function_name     = "my-lambda-function"
