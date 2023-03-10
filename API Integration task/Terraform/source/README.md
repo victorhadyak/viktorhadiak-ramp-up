@@ -4,4 +4,8 @@ AWS CLI command for providing environment variables to Lambda -
 aws lambda update-function-configuration \
   --function-name pd-jira-webex-lambda \
   --environment Variables="{WEBEX_ACCESS_TOKEN=, WEBEX_SPACE_ID=, JIRA_TOKEN=, JIRA_USER=, JIRA_URL=, JIRA_KEY=, JIRA_ISSUE=, JIRA_ID=}"
-  
+Trigger curl command - 
+curl -X POST \
+  https://API endpoin url \
+  -H 'Content-Type: application/json' \
+  -d '{"body": {"incident": {"id": "123456", "summary": "Test Incident", "html_url": "https://www.pagerduty.com/"}}}'
