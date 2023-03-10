@@ -14,12 +14,16 @@ webex_space_id = os.environ['WEBEX_SPACE_ID']
 
 # Lambda body
 def lambda_handler(event, context):
-    # Parse the PagerDuty
-    pd_payload_str = json.dumps(event['body'])
+    # Extract the JSON payload from the event
+    pd_payload_str = event['body']
+
+    # Parse the JSON payload into a Python object
     pd_payload = json.loads(pd_payload_str)
-    incident_id = pd_payload['incident']['id']
-    incident_summary = pd_payload['incident']['summary']
-    incident_url = pd_payload['incident']['html_url']  
+
+    # Extract the incident ID, summary, and URL from the payload
+    incident_id = pd_payload['body']['incident']['id']
+    incident_summary = pd_payload['body']['incident']['summary']
+    incident_url = pd_payload['body']['incident']['html_url'] 
       
     # Create a new Jira ticket  
     auth = HTTPBasicAuth(jira_user, jira_token)
