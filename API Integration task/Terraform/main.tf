@@ -1,7 +1,6 @@
 # Define a zip archive file from source directory and save to output directory
 data "archive_file" "lambda_function_zip" {
   type        = "zip"
-  source_dir  = var.source_dir
   output_path = var.output_dir
 }
 
